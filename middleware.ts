@@ -15,6 +15,7 @@ export default authMiddleware({
       "/api/webhook" // add this line
     ],
     ignoredRoutes: ["/((?!api|trpc))(_next.*|.+.[w]+$)", "/api/webhook"],
+    debug: true,
   });
 
 export const config = {
