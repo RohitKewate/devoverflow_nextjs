@@ -14,7 +14,7 @@ export default authMiddleware({
       "/jobs",
       "/api/webhook" // add this line
     ],
-    ignoredRoutes: ["/((?!api|trpc))(_next.*|.+.[w]+$)", "/api/webhook"],
+    ignoredRoutes: ["/api/webhook"],
     debug: true,
   });
 
