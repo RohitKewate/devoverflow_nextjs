@@ -12,7 +12,7 @@ export default authMiddleware({
         "profile/:id",
         "/community",
         "/jobs",
-        "/api/webhook" // add this line
+        "/api/webhooks(.*)" // add this line
       ],
       ignoredRoutes: ["/((?!api|trpc))(_next.*|.+.[w]+$)"],
       debug: true,
