@@ -53,9 +53,16 @@ export async function POST(req: Request) {
   // Get the ID and type
   const { id } = evt.data;
   const eventType = evt.type;
+
+  if (!id) {
+    console.error('Error: id is undefined');
+    return new Response('Error: id is undefined', { status: 400 });
+  }
  
   if (eventType === 'user.created') {
     const {id,email_addresses,image_url,username,first_name,last_name} = evt.data
+
+    
 
     const mongoUser = await createUser({
         clerkId: id,
