@@ -14,7 +14,7 @@ export async function getUserById(params: any) {
   try {
     await connectToDatabase();
     const { userId } = params;
-    const user = await User.findOne({ clerkId: userId });
+    const user = await User.findOne({ clerkid: userId });
 
     return user;
   } catch (error) {
@@ -39,8 +39,8 @@ export async function createUser(userData: CreateUserParams) {
 export async function updateUser(userData: UpdateUserParams) {
   try {
     await connectToDatabase();
-    const { clerkId, updateData, path } = userData;
-    await User.findOneAndUpdate({ clerkId }, updateData, {
+    const { clerkid, updateData, path } = userData;
+    await User.findOneAndUpdate({ clerkid }, updateData, {
       new: true,
     });
 
@@ -54,8 +54,8 @@ export async function updateUser(userData: UpdateUserParams) {
 export async function deleteUser(userData: DeleteUserParams) {
   try {
     await connectToDatabase();
-    const { clerkId } = userData;
-    const user = await User.findById({ clerkId });
+    const { clerkid } = userData;
+    const user = await User.findById({ clerkid });
     if (!user) {
       throw new Error("User not Found");
     }

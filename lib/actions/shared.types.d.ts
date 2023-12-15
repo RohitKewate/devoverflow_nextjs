@@ -110,7 +110,7 @@ export interface GetTopInteractedTagsParams {
 }
 
 export interface CreateUserParams {
-  clerkId: string;
+  clerkid: string;
   name: string;
   username: string;
   email: string;
@@ -129,7 +129,7 @@ export interface GetAllUsersParams {
 }
 
 export interface UpdateUserParams {
-  clerkId: string;
+  clerkid: string;
   updateData: Partial<IUser>;
   path: string;
 }
@@ -155,5 +155,5 @@ export interface GetUserStatsParams {
 }
 
 export interface DeleteUserParams {
-  clerkId: string;
+  clerkid: string;
 }
