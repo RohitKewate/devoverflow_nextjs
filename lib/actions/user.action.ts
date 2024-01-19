@@ -10,6 +10,19 @@ import {
 import { revalidatePath } from "next/cache";
 import Question from "@/database/question.model";
 
+export async function getAllUser(params:any){
+  
+  try {
+    await connectToDatabase();
+    const users = await User.find({}).sort({ createdAt: -1 });
+  
+    return { users };
+  } catch (error) {
+    
+  }
+}
+
+
 export async function getUserById(params: any) {
   try {
     await connectToDatabase();
@@ -75,3 +88,6 @@ export async function deleteUser(userData: DeleteUserParams) {
     throw error;
   }
 }
+
+
+

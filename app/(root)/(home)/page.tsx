@@ -11,7 +11,9 @@ import Link from "next/link";
 
 export default async function Home() {
   
-  const results:any = await getQuestion({})
+  const result = await getQuestion({});
+  
+
 
 
   
@@ -34,12 +36,12 @@ export default async function Home() {
 
       </div>
       <div className="mt-10 flex w-full flex-col gap-6">
-        {results && results.questions.length > 0 ?
-          results?.questions.map((question:any) => (
+        {result && result?.questions.length > 0 ?
+          result?.questions.map((question:any) => (
 
             <QuestionCard
-              key={question.clerkid}
-              _id={question.clerkid}
+              key={question._id}
+              _id={question._id}
               title={question.title}
               tags={question.tags}
               author={question.author}

@@ -18,6 +18,7 @@ interface QuestionProps {
 }
 
 const QuestionCard = ({ _id, title, tags, author, upvotes, views, answers, createdAt }: QuestionProps) => {
+    console.log("question id",_id)
     return (
         <div className='card-wrapper rounded-[10px] p-9 sm:px-11'>
             <div className='flex flex-col-reverse items-center justify-between gap-5 '>
@@ -50,7 +51,7 @@ const QuestionCard = ({ _id, title, tags, author, upvotes, views, answers, creat
 
                     <div className='flex flex-wrap gap-2'>
                         {tags.map((tag) => (
-                            <Tag key={tag._id} _id={tag._id} name={tag.name} route={`/tag/${_id}`} />
+                            <Tag key={tag._id} _id={tag._id} name={tag.name} route={`/tag/${tag._id}`} />
 
                         ))}
 

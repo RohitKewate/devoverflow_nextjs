@@ -4,7 +4,7 @@ import React from 'react'
 interface MetricProps {
     imgUrl:string ,
     alt:string ,
-    value:number ,
+    value:string ,
     title:string ,
     otherClasses:string,
 
